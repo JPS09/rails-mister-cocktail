@@ -7,13 +7,13 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts " Cleaning the DB"
 Cocktail.destroy_all if Rails.env.development?
+puts 'Cleaning the DB'
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
 ingredient = JSON.parse(ingredient_serialized)
 ingredients = ingredient['drinks']
 
- ingredients.each do |ingredient|
-   Ingredient.create!(name: ingredient.values)
-  end
+ingredients.each do |ingredient_add|
+  Ingredient.create!(name: ingredient_add.values)
+end
