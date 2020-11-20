@@ -1,4 +1,5 @@
 <div class="container">
   <h1>Enter a new dose with a description</h1>
   <%= render 'form', cocktail: @cocktail, dose: @dose%>
+  <%= link_to 'Back to the cocktail', cocktail_path(@cocktail)  %>
 </div>

@@ -1,14 +1,19 @@
 <div class="container">
   <h1> <%= @cocktail.name %></h1>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li>
-    <%="Description: #{dose.description}" %>
-    <%= "Ingredient: #{dose.ingredient.name}" %>
-    <%= link_to 'Delete that dose', dose_path(dose),method: :delete, data: {confirm: "Are you sure?"} %>
-  </li>
-  <% end %>
-</ul>
+  <div class="carousel">
+    <%= render 'carousel', cocktail: @cocktail %>
+  </div>
+  <div class="content_card">
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%="Description: #{dose.description}" %>
+        <%= "Ingredient: #{dose.ingredient.name}" %>
+        <%= link_to 'Delete that dose', dose_path(dose),method: :delete, data: {confirm: "Are you sure?"} %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 
   <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %> |
   <%= link_to 'Back to the list', cocktails_path  %>
