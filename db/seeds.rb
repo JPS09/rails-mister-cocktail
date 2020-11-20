@@ -14,6 +14,8 @@ ingredient_serialized = open(url).read
 ingredient = JSON.parse(ingredient_serialized)
 ingredients = ingredient['drinks']
 
-ingredients.each do |ingredient_add|
-  Ingredient.create!(name: ingredient_add.values)
+ingredients.each do |hash|
+  hash.each_value do |value|
+    Ingredient.create!(name: value)
+  end
 end
