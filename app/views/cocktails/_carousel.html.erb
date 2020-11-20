@@ -6,11 +6,12 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <%= cl_image_tag cocktail.photos.first.key , height: 300, width: 400, crop: :fill %>
     </div>
       <% cocktail.photos.each do |photo| %>
         <div class="carousel-item">
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
+          <%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill %>
+        </div>
     <% end %>
     </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

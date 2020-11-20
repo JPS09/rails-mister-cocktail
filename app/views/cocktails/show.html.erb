@@ -4,6 +4,7 @@
     <%= render 'carousel', cocktail: @cocktail %>
   </div>
   <div class="content_card">
+  <h3>Ingredients: </h3>
     <ul>
       <% @cocktail.doses.each do |dose| %>
       <li>
