@@ -1,5 +1,7 @@
 <div class="container">
-  <h1> <%= image_tag 'transparront.gif' %> Cocktail Parrot <%= image_tag 'transparront.gif' %></h1>
+  <div class="header">
+    <%= image_tag 'transparront.gif' %><h1>  Cocktail Parrot </h1><%= image_tag 'transparront.gif' %>
+  </div>
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
     <div class="card" style="width: 18rem;">
